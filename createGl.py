@@ -1,21 +1,18 @@
 import sys
 import os
-import shutil
 import gitlab
 
-path = "/home/vs/work/"
-
-token = "1u3_vi7Z_zsHQ4_1PFek"
+path = "/home/vs/work/" # TODO: change to your projects folder
+token = "provate-token" # TODO: Insert your gitlab private token
+gitlabUrl = "https://gitlab.com" # TODO: Change to your gitlab server url
 
 def createGl():
     folderName = str(sys.argv[1])
     dir = path + str(folderName)
 
-    if os.path.exists(dir):
-        shutil.rmtree(dir)
     os.mkdir(dir)
 
-    gl = gitlab.Gitlab("https://gitlab.com", private_token=token)
+    gl = gitlab.Gitlab(gitlabUrl, private_token=token)
     gl.projects.create({'name': folderName})
     print("Successfully created repository {}".format(folderName))
 

@@ -1,4 +1,4 @@
 selenium
 PyGithub
 python-gitlab
-shutil
+
