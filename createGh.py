@@ -2,12 +2,12 @@ import sys
 import os
 from github import Github
 
-path = "/Users/kalle/Documents/Projects/MyProjects/"
+path = "/home/vs/work/"
 
-username = "" #Insert your github username here
-password = "" #Insert your github password here
+username = "vladshut" #Insert your github username here
+password = "Newwarrior2929!" #Insert your github password here
 
-def create():
+def createGh():
     folderName = str(sys.argv[1])
     os.makedirs(path + str(folderName)
     user = Github(username, password).get_user()
@@ -15,4 +15,4 @@ def create():
     print("Succesfully created repository {}".format(folderName))
 
 if __name__ == "__main__":
-    create()
+    createGh()
