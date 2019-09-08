@@ -2,7 +2,7 @@
 
 function createGh() {
     cd ~/scripts
-    python create.py $1
+    python createGh.py $1
     cd /home/vs/work/$1
     git init
     git remote add origin git@github.com:vladshut/$1.git
